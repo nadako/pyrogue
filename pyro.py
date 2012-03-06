@@ -58,21 +58,4 @@ def StartGame():
         Global.IO.Shutdown()
 
 if __name__ == "__main__":
-    seed(3)
-    PROFILE = False
-    AUTO = False
-    if AUTO or PROFILE:
-        Global.KeyBuffer = "a\naaCbRqy "
-        #Global.KeyBuffer = "a\naaRqy "
-        seed(1)
-    if PROFILE:
-        import hotshot, hotshot.stats
-        p = hotshot.Profile("pyro.prof")
-        p.runcall(StartGame)
-        p.close()
-        stats = hotshot.stats.load("pyro.prof")
-        stats.strip_dirs()
-        stats.sort_stats("time", "calls")
-        stats.print_stats(20)
-    else:
-        StartGame()
+    StartGame()

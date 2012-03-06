@@ -1,10 +1,9 @@
-"astar.py - A* pathfinding module for Pyro"
+"""
+A* pathfinding module for Pyro.
 
-# This module assumes movement on a grid, rather than an arbitrary graph.
-
-from util import *
+This module assumes movement on a grid, rather than an arbitrary graph.
+"""
 from heapq import heappush, heappop
-from math import sqrt
 
 class NodeList(object):
     def __init__(self, name="nodelist"):
@@ -52,7 +51,6 @@ def path(start_x, start_y, dest_x, dest_y, passable, max_length=99999):
     h = max(abs(dest_x - start_x), abs(dest_y - start_y))
     open.add(start_x, start_y, 0, h, None, None)
     closed = NodeList("Closed")
-    length=0
     while len(open.nodes) > 0:
         node = open.pop()
         node_cost_h, node_cost, node_h, node_x, node_y, node_parent = node
@@ -97,5 +95,3 @@ def path(start_x, start_y, dest_x, dest_y, passable, max_length=99999):
     # Do the best we can:
     p = closed.best_path_so_far()
     return p
-                    
-     

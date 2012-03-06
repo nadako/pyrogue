@@ -491,6 +491,8 @@ class PlayerCharacter(creatures.Humanoid):
                 if i.quantity > 1 or Global.IO.YesNo(lang.prompt_pickup % i.Name()):
                     if i.quantity > 1:
                         qty = Global.IO.GetQuantity(i.quantity, lang.prompt_pickup_howmany % i.Name())
+                    else:
+                        qty = 1
                     if qty is None or qty == 0:
                         continue
                     success, msg = self.inventory.Pickup(i, qty)

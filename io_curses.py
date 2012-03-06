@@ -700,14 +700,6 @@ class IOWrapper(object):
         targets.sort(key=lambda m: (m[0].x-Global.pc.x)**2 + (m[0].y-Global.pc.y)**2)
         return Cycler(targets)
     def PutTile(self, x, y, tile, color):
-        try:
-            o = overlay[(x, y)]
-            try:
-                tile, color = o
-            except TypeError:
-                tile, color = o, c_Yellow
-        except KeyError:
-            pass
         self.screen.PutChar(y+MESSAGE_LINES, x, tile, color)
     def ShowMessage(self, msg, attr, nowait, forcewait):
         self.MorePrompt()

@@ -420,4 +420,3 @@ def report_combat_miss(attacker, target,
 ####################### INITIALIZATION ##########################
 
 log = Logger("pyro.log")
-overlay = {}   # For debugging purposes; characters to be drawn over the level map

@@ -1,14 +1,4 @@
 "util.py - Pyro utility functions"
-
-# Attempt to import and use Psyco, the Python specializing compiler:
-try:
-    raise ImportError   # Disable Psyco for now; it interferes with debugging
-    import psyco
-    psyco.full()
-    BASEOBJ = psyco.compact
-except ImportError:
-    BASEOBJ = object
-
 import curses
 from copy import deepcopy
 from random import choice, randint, uniform as rnd, normalvariate as norm, seed
@@ -20,7 +10,7 @@ from strings import lang
 class GameOver(Exception): pass
 
 ############################## GLOBALS ##########################
-class Global(BASEOBJ):
+class Global(object):
     KeyBuffer = ""
     FullDungeonRefresh = True
     current_level = None
@@ -124,7 +114,7 @@ vi_offsets = {
 } 
 ####################### CLASS DEFINITIONS #######################
 
-class Logger(BASEOBJ):
+class Logger(object):
     def __init__(self, filename):
         try:
             self.file = open(filename, "w")
@@ -142,7 +132,7 @@ class Logger(BASEOBJ):
         if self.file:
             self.file.write("%s\n" % entry)
 
-class Cycler(BASEOBJ):
+class Cycler(object):
     def __init__(self, iterable):
         try:
             iterable[0]

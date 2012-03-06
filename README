@@ -14,8 +14,6 @@ Short version: Run pyro.py.
 
 Longer version: Pyro requires Python 2.3 or higher installed on your system.  Pyro uses curses for input/output.  Curses is included with Python by default, except on Windows systems.  For Windows users, Pyro works with the WCurses module (http://adamv.com/dev/python/curses/), and *should* work with other ncurses-compliant modules if they are available for import as 'curses'.
 
-Pyro will automatically make use of Psyco (a sort of JIT compiler for Python) if it is available.  (http://psyco.sourceforge.net/)  Psyco is entirely optional.  Pyro runs about four times faster if Psyco is available.
-
 
 QUICK-START GUIDE
 -----------------

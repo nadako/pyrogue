@@ -21,7 +21,7 @@ types = [
     (lang.itemtype_other, "-"),
 ]
 
-class AttackType(BASEOBJ):
+class AttackType(object):
     "Any mode of attack."
     speed = 100
 
@@ -61,7 +61,7 @@ class DefaultAttack(MeleeAttackType):
     verbs_sp = lang.verbs_default_attack_2p
     damage = "1d2"
     
-class Item(BASEOBJ):
+class Item(object):
     "Inanimate objects"
     name = ">>Generic Item<<"
     type = "Other"

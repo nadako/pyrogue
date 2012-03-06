@@ -700,7 +700,7 @@ class PlayerCharacter(creatures.Humanoid):
             return 0
         else: raise ValueError
 
-class Command(BASEOBJ):
+class Command(object):
     "Any command the player can give has an instance of this class."
     long_desc = ""
     def __init__(self, desc, keys, function):
@@ -724,7 +724,7 @@ class PlayerInventory(creatures.Inventory):
         
 ################################ GODS AND RACES #########################################
 
-class Diety(BASEOBJ):
+class Diety(object):
     pass
 class Krol(Diety):
     name = "Krol"
@@ -733,7 +733,7 @@ class Dis(Diety):
     name = "Dis"
     desc = lang.goddesc_dis
         
-class Archetype(BASEOBJ):
+class Archetype(object):
     def __init__(self, pc):
         self.pc = pc
         self.gain_str, self.gain_dex, self.gain_int, self.gain_any = 0, 0, 0, 0

@@ -6,7 +6,7 @@ from util import *
 from heapq import heappush, heappop
 from math import sqrt
 
-class NodeList(BASEOBJ):
+class NodeList(object):
     def __init__(self, name="nodelist"):
         self.nodes, self.idx = [], {}
         self.name = name

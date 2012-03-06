@@ -76,7 +76,7 @@ tiles = {
     "blank":            " ",
 }
 
-class IOWrapper(BASEOBJ):
+class IOWrapper(object):
     "Class to handle all input/output."
     def __init__(self):
         "Initialize the IO system."
@@ -807,7 +807,7 @@ class IOWrapper(BASEOBJ):
         self.messages_displayed = 0
         return answer
                 
-class OptimizedScreen(BASEOBJ):
+class OptimizedScreen(object):
     "Optimized (buffered) wrapper for curses screen."
     def __init__(self, screen, width, height, colors):
         self.screen, self.width, self.height = screen, width, height

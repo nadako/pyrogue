@@ -2,7 +2,7 @@
 
 from util import *
 
-class Spell(BASEOBJ):
+class Spell(object):
     def AfterCast(self, caster):
         "Called after the spell is finished casting."
         caster.mp -= self.mp_cost
@@ -66,7 +66,7 @@ class SelfBuffSpell(Spell):
     def Cast(self, caster):
         caster.TakeEffect(self.Effect(caster), self.Duration(caster))
 
-class Effect(BASEOBJ):
+class Effect(object):
     power = 0
     duration = None  # Indicates permanent
     type = "none"

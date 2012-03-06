@@ -15,7 +15,7 @@ import io_curses as io
 
 ####################### CLASS DEFINITIONS #######################
 
-class Pyro(BASEOBJ):
+class Pyro(object):
     "Main class in charge of running the game."
     def __init__(self):
         # Start a new game:
@@ -30,7 +30,7 @@ class Pyro(BASEOBJ):
                                   c_yellow)
             log("Game ended normally.")
         
-class Game(BASEOBJ):
+class Game(object):
     "Holds all game data; pickling this should be sufficient to save the game."
     def __init__(self):
         # Create the dungeon and the first level:

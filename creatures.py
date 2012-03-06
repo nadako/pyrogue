@@ -17,7 +17,7 @@ class Claw(items.MeleeAttackType):
     damage = "1d4"
 
 
-class AI(BASEOBJ):
+class AI(object):
     "Artificial intelligence for mobs."
     def __init__(self, mob):
         self.mob = mob
@@ -95,7 +95,7 @@ class Berserker(AI):
             self.mob.Walk(0, 0)
             return False
 
-class Creature(BASEOBJ):
+class Creature(object):
     "An animate object."
     name = "Generic Creature"   # If this is seen in-game, it's a bug.
     can_open_doors = False
@@ -358,7 +358,7 @@ class Creature(BASEOBJ):
         else:
             return False
                 
-class Inventory(BASEOBJ):
+class Inventory(object):
     "Inventory class for creatures and the player."
     def __init__(self, mob):
         self.mob = mob
@@ -471,12 +471,12 @@ class Inventory(BASEOBJ):
         return sum([i[0].Weight() for i in self.items])
 
 
-class StatMod(BASEOBJ):
+class StatMod(object):
     "A temporary or permanent modification of a stat."
     def __init__(self, amount, desc):
         self.amount, self.desc = amount, desc
     
-class Stat(BASEOBJ):
+class Stat(object):
     "Tracks a single stat."
     def __init__(self, abbr, name, value):
         self.abbr, self.name, self.base_value = abbr, name, value
@@ -494,7 +494,7 @@ class Stat(BASEOBJ):
             self.mods.append(mod)
             return mod
     
-class Stats(BASEOBJ):
+class Stats(object):
     "Class to handle stat tracking for creatures."
     def __init__(self, str=8, dex=8, int=8):
         self.stats = {"str": Stat("str", lang.stat_name_str, str), 

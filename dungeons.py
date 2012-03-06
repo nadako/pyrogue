@@ -5,7 +5,7 @@ import dungeon_gen
 import fov
 import creatures
 
-class Dungeon(BASEOBJ):
+class Dungeon(object):
     "An entire multilevel dungeon."
     def __init__(self, name="dungeon"):
         self.name = name
@@ -22,7 +22,7 @@ class Dungeon(BASEOBJ):
         L = Level(self, i)
         return L
 
-class Level(BASEOBJ):
+class Level(object):
     "A single level of a dungeon."
     def __init__(self, dungeon, depth):
         self.timer = 0
@@ -301,7 +301,7 @@ class Level(BASEOBJ):
         mob.Update()
         self.mob_actions.sort(key=lambda m: m.timer)
         
-class Feature(BASEOBJ):
+class Feature(object):
     name = ">>no name<<"
     describe = True
     "Dungeon features (stairs, fountains, doors, etc)."

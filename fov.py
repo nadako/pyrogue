@@ -1,11 +1,11 @@
 "fov.py - Field-of-view calculation for Pyro."
 
 from util import *
-#BASEOBJ = object
+#object = object
 from sets import Set
 from math import sqrt
 
-class FOVMap(BASEOBJ):
+class FOVMap(object):
     # Multipliers for transforming coordinates to other octants:
     # X, Y = x * xx + y * xy, x * yx + y * yy
     # Octants: 0=NNW, 1=WNW, 2=ENE, 3=NNE, 4=SSE, 5=ESE, 6=WSW, 7=SSW

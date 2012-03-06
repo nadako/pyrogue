@@ -3,7 +3,6 @@ import curses
 from copy import deepcopy
 from random import choice, randint, uniform as rnd, normalvariate as norm, seed
 from math import ceil, sqrt
-from sets import Set
 from time import sleep
 from strings import lang
 

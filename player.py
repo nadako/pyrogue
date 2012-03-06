@@ -55,7 +55,7 @@ class PlayerCharacter(creatures.Humanoid):
 #        self.protection, self.evasion = 0, 0
         self.GainLevel()    # Gain level 1
         self.running, self.resting = False, False
-        self.old_fov, self.new_fov = Set(), Set()
+        self.old_fov, self.new_fov = set(), set()
         self.target = None
         self.current_level = None
     def AdjacentPassableSquares(self):
@@ -532,7 +532,7 @@ class PlayerCharacter(creatures.Humanoid):
         # If the targeted creature is dead, untarget it:
         if self.target and self.target.current_level is None:
             self.target = None
-        self.old_fov, self.new_fov = self.new_fov, Set()
+        self.old_fov, self.new_fov = self.new_fov, set()
         # Light up the squares within the PC's vision radius:
         radius_squared = (self.vision_radius + 0.5) ** 2
         for mob in self.current_level.creatures.values():

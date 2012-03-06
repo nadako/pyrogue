@@ -2,7 +2,6 @@
 
 from util import *
 #object = object
-from sets import Set
 from math import sqrt
 
 class FOVMap(object):
